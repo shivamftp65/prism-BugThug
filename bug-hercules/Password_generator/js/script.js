@@ -216,6 +216,7 @@ async function copyContent() {
 }
 
 copyBtn.addEventListener('click', () => {
-    if(passwordDisplay.value)
+    if(passwordDisplay.value){
         copyContent();
+    }
 })
