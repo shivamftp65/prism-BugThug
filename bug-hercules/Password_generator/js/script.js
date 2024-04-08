@@ -193,7 +193,7 @@ function generatePassword(){
     console.log('password :', password);
 
 
-    calcStrengthI();
+    calcStrength();
 }
 
 generateButton.addEventListener('click', generatePassword);
