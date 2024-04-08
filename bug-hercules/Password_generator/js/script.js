@@ -193,7 +193,29 @@ function generatePassword(){
     console.log('password :', password);
 
 
-    
+    calcStrengthI();
 }
 
 generateButton.addEventListener('click', generatePassword);
+
+async function copyContent() {
+    try {
+        await navigator.clipboard.writeText(passwordDisplay.value);
+        copyMsg.innerText = "copied successfully";
+    }
+    catch(e) {
+        copyMsg.innerText = "Failed";
+    }
+    //to make copy wala span visible
+    copyMsg.classList.add("active");
+
+    setTimeout( () => {
+        copyMsg.classList.remove("active");
+    },2000);
+
+}
+
+copyBtn.addEventListener('click', () => {
+    if(passwordDisplay.value)
+        copyContent();
+})
